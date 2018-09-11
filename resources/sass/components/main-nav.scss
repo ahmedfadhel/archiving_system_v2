@@ -1,0 +1,15 @@
+.navbar {
+  .navbar-burger {
+
+    margin-left:0px;
+    margin-right: auto;
+}
+  z-index:5000;
+  &.has-shadow{
+    box-shadow: 0 2px 3px hsla(0,0%,7%,.1), 0 0 0 1px hsla(0,0%,7%,.1);
+  }
+    
+    .navbar-item img {
+      max-height: 2.75rem;
+  }
+}
