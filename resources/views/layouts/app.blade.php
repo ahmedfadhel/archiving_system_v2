@@ -16,8 +16,11 @@
     <body>
         @include('partials._mainNav')
         <div id="app">
-            @include('partials._sideNav')
-            <div class="container is-widescreen" id="content">
+            @if (!Auth::guest())
+                @include('partials._sideNav')
+            @endif
+            
+            <div class="container is-widescreen {{Auth::guest()?'is-guest':''}}" id="content">
                 @yield('content')
             </div>
             
@@ -25,6 +28,6 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
-        @yield('scritps')
+        @yield('scripts')
     </body>
 </html>

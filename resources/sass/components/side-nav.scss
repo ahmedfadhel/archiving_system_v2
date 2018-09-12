@@ -21,6 +21,15 @@
       li ul {
         border-left:0px;
         border-right: 1px solid #dbdbdb;
+        padding-left:0px;
+        li{
+          transition: 0.25s padding ease;
+          padding-left:0.75rem;
+          &:hover{
+            padding-left:0px;
+          }
+        }
+        
       }
     }
   

@@ -26959,22 +26959,17 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   clip: auto;
 }
 
-#content {
+#content:not(.is-guest) {
   margin-right: 180px;
 }
 
-.box {
-  margin-top: 5rem;
-}
-
-.box .avatar {
-  margin-top: -70px;
+.avatar-box .avatar {
   padding-bottom: 20px;
 }
 
-.box .avatar img {
+.avatar-box .avatar img {
   border-radius: 25%;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   padding: 5px;
 }
 
@@ -27025,5 +27020,16 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .app-sidebar .menu-list li ul {
   border-left: 0px;
   border-right: 1px solid #dbdbdb;
+  padding-left: 0px;
+}
+
+.app-sidebar .menu-list li ul li {
+  -webkit-transition: 0.25s padding ease;
+  transition: 0.25s padding ease;
+  padding-left: 0.75rem;
+}
+
+.app-sidebar .menu-list li ul li:hover {
+  padding-left: 0px;
 }
 
