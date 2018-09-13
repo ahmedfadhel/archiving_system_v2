@@ -4,7 +4,7 @@
   </p> 
   <ul class="menu-list">
     <li>
-      <a href="#" class="is-active" aria-expanded="false" id="link">
+      <a href="#" class="{{Nav::isRoute('dashboard')}}" aria-expanded="false" id="link">
         اللوحة الرئيسية
         <span class="icon is-small is-pulled-left">
           <i class="fa fa-tachometer"></i>
@@ -93,16 +93,3 @@
     </li>
   </ul>
 </aside>
-
-@section('script2')
-    <script>
-
-      // const appSideBar = new Vue({
-      //   el: "#app-sidebar",
-      //   data:{
-      //     isOpen:false,
-      //     isOpened:true
-      //   }
-      // })
-    </script>
-@endsection

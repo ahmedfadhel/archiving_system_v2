@@ -18,5 +18,6 @@ Auth::routes();
 Route::group(array('prefix' => 'manage'),function(){
     
     Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::resource('users', 'UserController');
 
 });
