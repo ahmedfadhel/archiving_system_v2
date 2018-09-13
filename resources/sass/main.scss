@@ -1,7 +1,12 @@
-#content:not(.is-guest){
+#app:not(.is-guest){
   margin-right:180px;
+  padding-left:50px;
+}
+.has-border-radius{
+  border-radius:10px;
 }
 //Component styles
 @import 'components/login-form';
 @import 'components/main-nav';
-@import 'components/side-nav'
+@import 'components/side-nav';
+@import 'components/main-dashboard';

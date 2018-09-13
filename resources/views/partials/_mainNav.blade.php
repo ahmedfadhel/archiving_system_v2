@@ -1,5 +1,5 @@
 <nav class="navbar has-shadow">
-  <div class="container">
+  <div class="container is-fluid">
     <div class="navbar-brand">
         <a href="{{ url('/') }}" class="navbar-item">
           <img src="{{asset('img/logo-1.png')}}" alt="Bulma: a modern CSS framework based on Flexbox" width="250">

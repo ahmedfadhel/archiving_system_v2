@@ -2,7 +2,7 @@
 
 @section('content')
 
-   <div class="columns"style="margin-top:25px;">
+   <div class="columns m-t-100">
        <div class="column is-half is-offset-one-quarter">
            <div class="card">
                 <div class="card-header">
@@ -23,7 +23,7 @@
    </div>
 @endsection
 
-@section('scritps')
+@section('scripts')
     <script>
         const app = new Vue({
             el:"#app",

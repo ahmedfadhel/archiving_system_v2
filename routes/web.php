@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
+Route::group(array('prefix' => 'manage'),function(){
+    
+    Route::get('/', 'HomeController@index')->name('dashboard');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+});

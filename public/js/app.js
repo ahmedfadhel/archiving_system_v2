@@ -11962,6 +11962,13 @@ window.Vue = __webpack_require__(9);
  */
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
+var appSideBar = new Vue({
+    el: "#app-sidebar",
+    data: {
+        isOpen: true,
+        isOpened: true
+    }
+});
 // Bulma NavBar Burger Script
 document.addEventListener('DOMContentLoaded', function () {
     // Get all "navbar-burger" elements

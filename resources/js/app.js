@@ -16,6 +16,13 @@ import Buefy from 'buefy'
  */
 Vue.use(Buefy)
 
+const appSideBar = new Vue({
+        el: "#app-sidebar",
+        data:{
+          isOpen:true,
+          isOpened:true
+        }
+      })
 // Bulma NavBar Burger Script
 document.addEventListener('DOMContentLoaded', function () {
     // Get all "navbar-burger" elements

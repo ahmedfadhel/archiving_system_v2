@@ -4,7 +4,7 @@
   </p> 
   <ul class="menu-list">
     <li>
-      <a href="#" class="is-active" aria-expanded="false">
+      <a href="#" class="is-active" aria-expanded="false" id="link">
         اللوحة الرئيسية
         <span class="icon is-small is-pulled-left">
           <i class="fa fa-tachometer"></i>
@@ -67,16 +67,42 @@
         </ul>
     </b-collapse>
     </li>
+    <li>
+        <a aria-expanded="true" @click="isOpened = !isOpened">
+          <span class="icon is-small is-angle">
+            <i class="fa fa-angle-down"></i>
+          </span>
+          الادارة القسم
+          <span class="icon is-small is-pulled-left">
+            <i class="fa fa-tasks"></i>
+          </span>
+        </a> 
+        <b-collapse class="panel" :open.sync="isOpened">
+          <ul>
+            <li>
+              <a href="#" class="">
+                  الزبائن
+                  <span class="icon is-small is-pulled-left">
+                    <i class="fa fa-users"></i>
+                  </span>
+              </a>
+            </li>
+
+          </ul>
+      </b-collapse>
+    </li>
   </ul>
 </aside>
 
-@section('scripts')
+@section('script2')
     <script>
-      const appSideBar = new Vue({
-        el: "#app-sidebar",
-        data:{
-          isOpen:true
-        }
-      })
+
+      // const appSideBar = new Vue({
+      //   el: "#app-sidebar",
+      //   data:{
+      //     isOpen:false,
+      //     isOpened:true
+      //   }
+      // })
     </script>
 @endsection
