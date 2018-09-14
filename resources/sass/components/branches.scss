@@ -1,0 +1,17 @@
+.branches{
+  .table td, .table th{
+    text-align: right;
+  }
+  .card-content{
+    ul{
+      border: 1px solid #eee;
+      li{
+        border-bottom: 1px solid #eee;
+        span{
+          font-weight: bold;
+          margin-left:10px;
+        }
+      }
+    }
+  }
+}

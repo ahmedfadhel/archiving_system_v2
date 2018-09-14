@@ -1,6 +1,19 @@
 #app:not(.is-guest){
   margin-right:180px;
-  padding-left:50px;
+  padding-left:60px;
+  padding-top:3.75rem;
+  .dash-title{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #e53d2f;
+      bottom: 0px;
+      right: 0;
+    }
+  }
 }
 .has-border-radius{
   border-radius:10px;
@@ -10,3 +23,5 @@
 @import 'components/main-nav';
 @import 'components/side-nav';
 @import 'components/main-dashboard';
+@import 'components/branches.scss';
+@import 'components/locations.scss';

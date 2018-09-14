@@ -4,7 +4,7 @@
   </p> 
   <ul class="menu-list">
     <li>
-      <a href="#" class="{{Nav::isRoute('dashboard')}}" aria-expanded="false" id="link">
+      <a href="{{route('dashboard')}}" class="{{Nav::isRoute('dashboard')}}" aria-expanded="false" id="link">
         اللوحة الرئيسية
         <span class="icon is-small is-pulled-left">
           <i class="fa fa-tachometer"></i>
@@ -57,13 +57,21 @@
             </a>
           </li>
           <li>
-              <a href="#" class="">
-                  الفروع
-                  <span class="icon is-small is-pulled-left">
-                    <i class="fa fa-building"></i>
-                  </span>
-              </a>
-            </li>
+            <a href="{{route('branches.index')}}" class="{{Nav::isResource('branches')}}">
+                الفروع
+                <span class="icon is-small is-pulled-left">
+                  <i class="fa fa-building"></i>
+                </span>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('locations.index')}}" class="{{Nav::isResource('locations')}}">
+                المواقع
+                <span class="icon is-small is-pulled-left">
+                  <i class="fa fa-location-arrow"></i>
+                </span>
+            </a>
+          </li>
         </ul>
     </b-collapse>
     </li>

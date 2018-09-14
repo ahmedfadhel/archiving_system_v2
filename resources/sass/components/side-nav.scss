@@ -23,10 +23,19 @@
         border-right: 1px solid #dbdbdb;
         padding-left:0px;
         li{
-          transition: 0.25s padding ease;
-          padding-left:0.75rem;
+          
+          padding-left:0;
           &:hover{
-            padding-left:0px;
+            .icon{
+              margin-left:0;
+            }
+          }
+          a{
+            padding: 0.5em 0.75em 0.5em 0;
+          }
+          .icon{
+            margin-left:0.75rem;
+            transition: 0.25s margin ease;
           }
         }
         

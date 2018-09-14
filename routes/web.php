@@ -19,5 +19,7 @@ Route::group(array('prefix' => 'manage'),function(){
     
     Route::get('/', 'HomeController@index')->name('dashboard');
     Route::resource('users', 'UserController');
-
+    Route::resource('departments', 'DepartmentController');
+    Route::resource('branches', 'BranchController');
+    Route::resource('locations', 'LocationController');
 });

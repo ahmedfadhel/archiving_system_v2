@@ -1,18 +1,6 @@
 .dashboard{
-  margin-top: 3.75rem;
   .card {
     height: 100%;
   }
-  .dash-title{
-    position: relative;
-    &:after{
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 1px;
-      background-color: #e53d2f;
-      bottom: 0px;
-      right: 0;
-    }
-  }
+  
 }

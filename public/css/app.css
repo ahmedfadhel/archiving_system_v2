@@ -27641,7 +27641,22 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 #app:not(.is-guest) {
   margin-right: 180px;
-  padding-left: 50px;
+  padding-left: 60px;
+  padding-top: 3.75rem;
+}
+
+#app:not(.is-guest) .dash-title {
+  position: relative;
+}
+
+#app:not(.is-guest) .dash-title:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #e53d2f;
+  bottom: 0px;
+  right: 0;
 }
 
 .has-border-radius {
@@ -27712,34 +27727,55 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .app-sidebar .menu-list li ul li {
-  -webkit-transition: 0.25s padding ease;
-  transition: 0.25s padding ease;
-  padding-left: 0.75rem;
+  padding-left: 0;
 }
 
-.app-sidebar .menu-list li ul li:hover {
-  padding-left: 0px;
+.app-sidebar .menu-list li ul li:hover .icon {
+  margin-left: 0;
 }
 
-.dashboard {
-  margin-top: 3.75rem;
+.app-sidebar .menu-list li ul li a {
+  padding: 0.5em 0.75em 0.5em 0;
+}
+
+.app-sidebar .menu-list li ul li .icon {
+  margin-left: 0.75rem;
+  -webkit-transition: 0.25s margin ease;
+  transition: 0.25s margin ease;
 }
 
 .dashboard .card {
   height: 100%;
 }
 
-.dashboard .dash-title {
-  position: relative;
+.branches .table td,
+.branches .table th {
+  text-align: right;
 }
 
-.dashboard .dash-title:after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 1px;
-  background-color: #e53d2f;
-  bottom: 0px;
-  right: 0;
+.branches .card-content ul {
+  border: 1px solid #eee;
+}
+
+.branches .card-content ul li {
+  border-bottom: 1px solid #eee;
+}
+
+.branches .card-content ul li span {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.locations .card-content > ul {
+  border: 1px solid #eee;
+}
+
+.locations .card-content > ul > li {
+  border-bottom: 1px solid #eee;
+}
+
+.locations .card-content > ul > li span {
+  font-weight: bold;
+  margin-left: 10px;
 }
 
