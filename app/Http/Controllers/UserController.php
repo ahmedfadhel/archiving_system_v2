@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use App\Department;
 class UserController extends Controller
 {
     /**
@@ -14,8 +15,8 @@ class UserController extends Controller
     public function index()
     {
         //
-
-        return view('manage.users.index');
+        $users = User::get()->all();
+        return view('manage.users.index')->withUsers($users);
     }
 
     /**
@@ -26,6 +27,9 @@ class UserController extends Controller
     public function create()
     {
         //
+        $departments = Department::get()->all();
+        return view('manage.users.create')
+                ->withDepartments($departments);
     }
 
     /**

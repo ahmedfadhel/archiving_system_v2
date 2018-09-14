@@ -15,6 +15,8 @@ class RoleController extends Controller
     public function index()
     {
         //
+        $roles = Role::get()->all();
+        return view('manage.roles.index')->withRoles($roles);
     }
 
     /**

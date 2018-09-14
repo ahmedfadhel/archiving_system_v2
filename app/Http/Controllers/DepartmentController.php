@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Department;
+use App\Branch;
 class DepartmentController extends Controller
 {
     /**
@@ -14,6 +15,8 @@ class DepartmentController extends Controller
     public function index()
     {
         //
+        $departments = Department::get()->all();
+        return view('manage.departments.index')->withDepartments($departments);
     }
 
     /**
@@ -24,6 +27,8 @@ class DepartmentController extends Controller
     public function create()
     {
         //
+        $branches = Branch::get()->all();
+        return view('manage.departments.create')->withBranches($branches);
     }
 
     /**
@@ -35,6 +40,23 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        //Validate the Request
+
+        $this->validate($request,[
+            'name'          => 'required|string|min:2|max:15',
+            'description'   => 'required|string|min:10|max:200',
+            'branch_id'     => 'required|numeric'
+        ]);
+
+        $department = new Department;
+        $department->name = $request->input('name');
+        $department->description = $request->input('description');
+        $department->branch_id = $request->input('branch_id');
+        
+        if($department->save()){
+            return redirect()->route('departments.index');
+        }
     }
 
     /**
@@ -46,6 +68,9 @@ class DepartmentController extends Controller
     public function show($id)
     {
         //
+        $department = Department::find($id);
+        return view('manage.departments.show')
+                ->withDepartment($department);
     }
 
     /**

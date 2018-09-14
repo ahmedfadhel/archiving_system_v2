@@ -22,19 +22,20 @@
         border-left:0px;
         border-right: 1px solid #dbdbdb;
         padding-left:0px;
+        margin-left:0px;
         li{
           
           padding-left:0;
           &:hover{
             .icon{
-              margin-left:0;
+              margin-left:0.75rem;
             }
           }
           a{
             padding: 0.5em 0.75em 0.5em 0;
           }
           .icon{
-            margin-left:0.75rem;
+            margin-left: 1.50rem;
             transition: 0.25s margin ease;
           }
         }

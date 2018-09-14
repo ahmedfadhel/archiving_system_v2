@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Permission;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use App\Permission;
 class PermissionController extends Controller
 {
     /**
@@ -15,6 +15,9 @@ class PermissionController extends Controller
     public function index()
     {
         //
+        $permissions = Permission::get()->all();
+        return view('manage.permissions.index')
+                ->withPermissions($permissions);
     }
 
     /**

@@ -11,20 +11,16 @@ class Branch extends Model
         'name', 'brch_code', 'location_id',
     ];
 
+
+    //Get location of Branch
     public function location(){
         return $this->belongsTo('App\Location');
     }
-      /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
-    */
-    public function messages()
-    {
-        return [
-            'name.required' => 'هذا الحقل مطلوب',
-            'brch_code.required'  => 'هذا الحقل مطلوب',
-            'brch_code.unique' => 'هذا الرمز مستخدم سابقاً'
-        ];
+
+    //Get Departments belongs to branch
+
+    public function departments(){
+        return $this->hasMany('App\Departments');
     }
+     
 }

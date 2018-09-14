@@ -10,7 +10,7 @@
         </div>
     </div>
     <hr class="is-marginless m-b-30">
-    <div class="columns p-r 10">
+    <div class="columns p-r-10">
       <div class="column is-6 is-offset-3">
         <div class="card">
           <div class="card-header">

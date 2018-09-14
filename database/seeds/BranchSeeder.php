@@ -12,6 +12,7 @@ class BranchSeeder extends Seeder
     public function run()
     {
         //
+        $this->command->info('Seeding Branches Table ...');
         $branch = Branch::create([
             'name' => 'الكرادة',
             'brch_code'=>'bg-1',

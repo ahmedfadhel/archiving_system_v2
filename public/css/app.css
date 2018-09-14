@@ -27724,6 +27724,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   border-left: 0px;
   border-right: 1px solid #dbdbdb;
   padding-left: 0px;
+  margin-left: 0px;
 }
 
 .app-sidebar .menu-list li ul li {
@@ -27731,7 +27732,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .app-sidebar .menu-list li ul li:hover .icon {
-  margin-left: 0;
+  margin-left: 0.75rem;
 }
 
 .app-sidebar .menu-list li ul li a {
@@ -27739,7 +27740,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 .app-sidebar .menu-list li ul li .icon {
-  margin-left: 0.75rem;
+  margin-left: 1.50rem;
   -webkit-transition: 0.25s margin ease;
   transition: 0.25s margin ease;
 }

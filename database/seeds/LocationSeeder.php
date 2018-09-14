@@ -12,6 +12,7 @@ class LocationSeeder extends Seeder
     public function run()
     {
         //
+        $this->command->info('Seeding Location Table ...');
         $location = [
             [
                 'name' => 'Baghdad',

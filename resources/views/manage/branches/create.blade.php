@@ -21,7 +21,6 @@
             <form action="{{ route('branches.store')}}" method="POST">
               {{ csrf_field() }}
               <b-field 
-                
                 custom-class="m-l-10" 
                 label="اسم الفرع"
                 type="{{$errors->has('name')? 'is-danger':''}}"
@@ -56,8 +55,7 @@
                 </b-select>
               </b-field>
               
-              <b-field
-                
+              <b-field 
                 custom-class="m-l-10" 
                 label="رمز الفرع"
                 type="{{$errors->has('brch_code')? 'is-danger':''}}"

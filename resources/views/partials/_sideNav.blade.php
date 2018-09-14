@@ -25,7 +25,7 @@
       <b-collapse class="panel" :open.sync="isOpen">
         <ul>
           <li>
-            <a href="#" class="">
+            <a href="{{route('users.index')}}" class="{{Nav::isResource('users')}}">
                 المستخدمين
                 <span class="icon is-small is-pulled-left">
                   <i class="fa fa-users"></i>
@@ -33,7 +33,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="">
+            <a href="{{route('roles.index')}}" class="{{Nav::isResource('roles')}}">
               الادوار
               <span class="icon is-small is-pulled-left">
                 <i class="fa fa-user-secret"></i>
@@ -41,7 +41,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="">
+            <a href="{{route('permissions.index')}}" class="{{Nav::isResource('permissions')}}">
               الصلاحيات
               <span class="icon is-small is-pulled-left">
                 <i class="fa fa-key"></i>
@@ -49,7 +49,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="">
+            <a href="{{route('departments.index')}}" class="{{Nav::isResource('departments')}}">
                 الاقسام
                 <span class="icon is-small is-pulled-left">
                   <i class="fa fa-bed"></i>
