@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Department;
+use App\Role;
+use Hash;
 class UserController extends Controller
 {
     /**
@@ -28,8 +30,15 @@ class UserController extends Controller
     {
         //
         $departments = Department::get()->all();
+        $branches=[];
+        foreach($departments as $department){
+            $branches[$department->name] = $department->branch->name . '/ ' .$department->branch->location->name;;
+        }
+        $roles = Role::get()->all();
         return view('manage.users.create')
-                ->withDepartments($departments);
+                ->withDepartments($departments)
+                ->withBranches($branches)
+                ->withRoles($roles);
     }
 
     /**
@@ -41,6 +50,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'name'=> 'required|string|min:5|max:30',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8|confirmed'
+        ]);
+
+        $user = new User;
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->department_id = $request->input('department_id');
+        $role = Role::find($request->input('role'));
+        if($user->save()){
+            $user->roles()->attach([$role->id]);
+            return redirect()->route('users.index');
+        }
     }
 
     /**
@@ -52,6 +77,10 @@ class UserController extends Controller
     public function show($id)
     {
         //
+
+        $user = User::find($id);
+        return view('manage.users.show')
+                ->withUser($user);
     }
 
     /**

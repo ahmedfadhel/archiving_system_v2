@@ -1,0 +1,22 @@
+.users{
+  .control.has-icons-right .input, .control.has-icons-right .taginput .taginput-container.is-focusable, .taginput .control.has-icons-right .taginput-container.is-focusable, .control.has-icons-right .select select{
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: calc(0.625em - 1px);
+    padding-right: calc(0.625em - 1px);
+    padding-top: calc(0.375em - 1px);
+  }
+
+  .eye{
+    
+    .icon{
+      &.is-right{
+        right: auto;
+        left:0;
+      }
+      i{
+        color:$danger
+      }
+    }
+    
+  }
+}

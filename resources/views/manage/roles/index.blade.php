@@ -28,6 +28,7 @@
                       <th>الاسم الصريح</th>
                       <th>وصف التصريح</th>
                       <th>التحكم</th>
+                      <th>xx</th>
                     </tr>
                   </thead>
                 <tbody>
@@ -42,6 +43,7 @@
                         <a href="{{route('roles.edit',$role->id)}}" class="button is-outlined is-success">Edit</a>
                         
                       </th>
+                      <th>{{$role->allPermissions}}</th>
                     </tr>
                   @endforeach
                 </tbody>

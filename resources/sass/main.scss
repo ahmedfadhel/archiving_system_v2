@@ -14,6 +14,19 @@
       right: 0;
     }
   }
+  @include until($tablet){
+    .is-pulled-left{
+      float: right !important;
+      margin-bottom: 10px;
+    }
+    // hr{
+    //   display: none;
+    // }
+    td>a{
+      width:100%;
+    }
+  }
+  
 }
 .has-border-radius{
   border-radius:10px;
@@ -23,5 +36,7 @@
 @import 'components/main-nav';
 @import 'components/side-nav';
 @import 'components/main-dashboard';
-@import 'components/branches.scss';
-@import 'components/locations.scss';
+@import 'components/branches';
+@import 'components/locations';
+@import 'components/users';
+@import 'components/responsive-table'

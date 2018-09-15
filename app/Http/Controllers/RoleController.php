@@ -27,6 +27,8 @@ class RoleController extends Controller
     public function create()
     {
         //
+
+        return view('manage.roles.create');
     }
 
     /**
@@ -38,6 +40,20 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        $this->validate($request,[
+            'name' => 'required|min:5|max:20|unique:roles',
+            'display_name' =>'required|string|min:5|max:30',
+            'description' => 'required|string|min:10|max:50'
+        ]);
+
+        $role = new Role;
+        $role->name = $request->input('name');
+        $role->display_name = $request->input('display_name');
+        $role->description = $request->input('description');
+        if($role->save()){
+            return redirect()->route('roles.index');
+        }
     }
 
     /**

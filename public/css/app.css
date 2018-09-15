@@ -27659,6 +27659,17 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   right: 0;
 }
 
+@media screen and (max-width: 768px) {
+  #app:not(.is-guest) .is-pulled-left {
+    float: right !important;
+    margin-bottom: 10px;
+  }
+
+  #app:not(.is-guest) td > a {
+    width: 100%;
+  }
+}
+
 .has-border-radius {
   border-radius: 10px;
 }
@@ -27778,5 +27789,26 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 .locations .card-content > ul > li span {
   font-weight: bold;
   margin-left: 10px;
+}
+
+.users .control.has-icons-right .input,
+.users .control.has-icons-right .taginput .taginput-container.is-focusable,
+.taginput .users .control.has-icons-right .taginput-container.is-focusable,
+.users .control.has-icons-right .taginput .taginput-container.is-focusable,
+.users .taginput .control.has-icons-right .taginput-container.is-focusable,
+.users .control.has-icons-right .select select {
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-top: calc(0.375em - 1px);
+}
+
+.users .eye .icon.is-right {
+  right: auto;
+  left: 0;
+}
+
+.users .eye .icon i {
+  color: #e53d2f;
 }
 
