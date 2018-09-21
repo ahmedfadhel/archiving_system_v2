@@ -24,4 +24,5 @@ Route::group(array('prefix' => 'manage'),function(){
     Route::resource('departments', 'DepartmentController');
     Route::resource('branches', 'BranchController');
     Route::resource('locations', 'LocationController');
+    Route::resource('customers', 'CustomerController');
 });

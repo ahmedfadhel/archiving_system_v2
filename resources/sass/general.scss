@@ -1,0 +1,36 @@
+#app:not(.is-guest){
+  margin-right:180px;
+  padding-left:60px;
+  padding-top:3.75rem;
+  .dash-title{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #e53d2f;
+      bottom: 0px;
+      right: 0;
+    }
+  }
+  @include until($tablet){
+    .is-pulled-left{
+      float: right !important;
+      margin-bottom: 10px;
+    }
+    td>a{
+      width:100%;
+    }
+  }
+  .b-table .table th .th-wrap.is-numeric{
+    flex-direction:row;
+  }
+  .pagination .pagination-next, .pagination .pagination-previous{
+    transform: scale(-1,1)
+  }
+  
+}
+.has-border-radius{
+  border-radius:10px;
+}

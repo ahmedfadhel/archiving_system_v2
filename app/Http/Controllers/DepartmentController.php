@@ -15,7 +15,7 @@ class DepartmentController extends Controller
     public function index()
     {
         //
-        $departments = Department::get()->all();
+        $departments = Department::with('branch.location')->get();
         return view('manage.departments.index')->withDepartments($departments);
     }
 

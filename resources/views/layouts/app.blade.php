@@ -18,7 +18,6 @@
         <div >
             @if (!Auth::guest())
                 @include('partials._sideNav')
-                {{-- @yield('sidebar') --}}
             @endif
             
             <div class="container is-widescreen {{Auth::guest()?'is-guest':''}}" id="app">

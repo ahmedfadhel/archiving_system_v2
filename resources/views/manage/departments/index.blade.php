@@ -24,31 +24,37 @@
             </div>
           </div>
           <div class="card-content">
-            <table class="table is-fullwidth">
-              <thead>
-                <tr>
-                  <th>ت</th>
-                  <th>اسم القسم</th>
-                  <th>وصف القسم</th>
-                  <th>الفرع</th>
-                  <th>التحكم</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($departments as $department)
-                    <tr>
-                    <td>{{$department->id}}</td>
-                    <td>{{$department->name}}</td>
-                    <td>{{$department->description}}</td>
-                    <td>{{$department->branch->name}} / {{$department->branch->location->name}}</td>
-                      <td>
-                      <a href="{{route('departments.show',$department->id)}}" class="button is-info is-outlined">View</a>
-                      <a href="{{route('departments.edit',$department->id)}}" class="button is-success is-outlined">Edit</a>
-                      </td>
-                    </tr>
-                @endforeach
-              </tbody>
-            </table>
+            {{-- Table Start --}}
+          <b-table
+            :data="departments" 
+            :mobile-cards="hasMobileCards"
+            :hoverable="isHoverable"
+            :paginated="isPaginated"
+            :per-page="perPage"
+            :pagination-simple="isPaginationSimple"> 
+            
+            <template slot-scope="props" >
+
+              <b-table-column field="id" label="ت" width="40" numeric>
+                @{{ props.row.id }} 
+              </b-table-column>
+
+              <b-table-column field="name" label="الاسم" width="40" numeric>
+                @{{ props.row.name }}  
+              </b-table-column>
+
+              <b-table-column field="description" label="وصف القسم" width="40" numeric>
+                @{{ props.row.description}}
+              </b-table-column>
+              <b-table-column field="location" label=" المحافظة / الفرع" width="40" numeric>
+                @{{ props.row.branch.name }} / @{{ props.row.branch.location.name }}
+              </b-table-column>
+              <b-table-column label="التحكم" width="40" numeric>  
+                <a class="button is-info is-outlined" :href=`departments\/${props.row.id}`>View</a>
+                <a class="button is-success is-outlined" :href=`departments\/${props.row.id}\/edit`>Edit</a>
+              </b-table-column>
+            </template>
+          </b-table>
           </div>
         </div>
       </div>
@@ -60,5 +66,17 @@
 @endsection
 
 @section('scripts')
-    
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        departments: {!! json_encode($departments) !!},
+        hasMobileCards: true,
+        isHoverable: true,
+        perPage: 10,
+        isPaginated: true,
+        isPaginationSimple:true 
+      }
+    })
+  </script>
 @endsection

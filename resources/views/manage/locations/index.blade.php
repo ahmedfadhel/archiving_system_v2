@@ -22,44 +22,54 @@
              </h3>
            </div>
            <div class="card-content">
-             <table class="table is-fullwidth">
-               <thead>
-                 <tr>
-                   <th>ت</th>
-                   <th>ألاسم</th>
-                   <th>رمز الموقع</th>
-                   <th>الفروع</th>
-                   <th>التحكم</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 @foreach ($locations as $location)
-                     <tr>
-                      <td>{{$location->id}}</td>
-                      <td>{{$location->name}}</td>
-                      <td>{{$location->loc_code}}</td>
-                      <td>
-                        <ul>
-                          @foreach ($location->branch as $branch)
-                            <li>
-                              <a href="{{route('branches.show',['id'=>$branch->id])}}">{{$branch->name}}</a>
-                            </li> 
-                          @endforeach
+             <b-table
+                :data="locations" 
+                :mobile-cards="hasMobileCards"
+                :hoverable="isHoverable"
+                :paginated="isPaginated"
+                :per-page="perPage"
+                :pagination-simple="isPaginationSimple"> 
+                
+               <template slot-scope="props" >
 
-                        </ul>
-                        
-                      </td>
-                      <td>
-                        <a href="{{route('locations.show',['id'=>$location->id])}}" class="button is-info is-outlined">View</a>
-                        <a href="{{route('locations.edit',['id'=>$location->id])}}" class="button is-success is-outlined">Edit</a>
-                      </td>
-                     </tr>
-                 @endforeach
-               </tbody>
-             </table>
+                  <b-table-column field="id" label="ت" width="40" numeric>
+                    @{{ props.row.id }} 
+                  </b-table-column>
+
+                  <b-table-column field="name" label="الاسم" width="40" numeric>
+                    @{{ props.row.name }}  
+                  </b-table-column>
+
+                  <b-table-column field="loc_code" label="رمز الموقع" width="40" numeric>
+                    @{{ props.row.loc_code }}
+                  </b-table-column>
+
+                  <b-table-column label="التحكم" width="40" numeric>  
+                    <a class="button is-info is-outlined" :href=`locations\/${props.row.id}`>View</a>
+                    <a class="button is-success is-outlined" :href=`locations\/${props.row.id}\/edit`>Edit</a>
+                  </b-table-column>
+               </template>
+             </b-table>
+
            </div>
          </div>
       </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data:{
+          locations: {!! json_encode($locations) !!},
+          hasMobileCards: true,
+          isHoverable: true,
+          perPage: 10,
+          isPaginated: true,
+          isPaginationSimple:true 
+        }
+      })
+    </script>
 @endsection

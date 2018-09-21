@@ -14,7 +14,7 @@ import Buefy from 'buefy'
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.use(Buefy)
+Vue.use(Buefy,{ defaultIconPack: 'fa' })
 
 const appSideBar = new Vue({
         el: "#app-sidebar",

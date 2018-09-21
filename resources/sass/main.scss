@@ -1,36 +1,6 @@
-#app:not(.is-guest){
-  margin-right:180px;
-  padding-left:60px;
-  padding-top:3.75rem;
-  .dash-title{
-    position: relative;
-    &:after{
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      background-color: #e53d2f;
-      bottom: 0px;
-      right: 0;
-    }
-  }
-  @include until($tablet){
-    .is-pulled-left{
-      float: right !important;
-      margin-bottom: 10px;
-    }
-    // hr{
-    //   display: none;
-    // }
-    td>a{
-      width:100%;
-    }
-  }
-  
-}
-.has-border-radius{
-  border-radius:10px;
-}
+//General Style
+
+@import './general.scss';
 //Component styles
 @import 'components/login-form';
 @import 'components/main-nav';

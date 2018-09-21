@@ -20,37 +20,54 @@
               <div class="card-header-title">الادوار المتوفرة</div>
             </div>
             <div class="card-content">
-              <table class="table is-fullwidth">
-                  <thead>
-                    <tr>
-                      <th>ت</th>
-                      <th>الاسم</th>
-                      <th>الاسم الصريح</th>
-                      <th>وصف التصريح</th>
-                      <th>التحكم</th>
-                      <th>xx</th>
-                    </tr>
-                  </thead>
-                <tbody>
-                  @foreach ($roles as $role)
-                    <tr>
-                      <th>{{$role->id}}</th>
-                      <th>{{$role->name}}</th>
-                      <th>{{$role->display_name}}</th>
-                      <th>{{$role->description}}</th>
-                      <th>
-                        <a href="{{route('roles.show',$role->id)}}" class="button is-outlined is-info">View</a>
-                        <a href="{{route('roles.edit',$role->id)}}" class="button is-outlined is-success">Edit</a>
-                        
-                      </th>
-                      <th>{{$role->allPermissions}}</th>
-                    </tr>
-                  @endforeach
-                </tbody>
-              </table>
+              {{-- Table Start --}}
+            <b-table
+              :data="roles" 
+              :mobile-cards="hasMobileCards"
+              :hoverable="isHoverable"
+              :paginated="isPaginated"
+              :per-page="perPage"
+              :pagination-simple="isPaginationSimple"> 
+              
+              <template slot-scope="props" >
+                <b-table-column field="id" label="ت" width="40" numeric>
+                  @{{ props.row.id }} 
+                </b-table-column>
+
+                <b-table-column field="name" label="الاسم" width="40" numeric>
+                  @{{ props.row.name }}  
+                </b-table-column>
+
+                <b-table-column field="display_name" label="وصف القسم" width="40" numeric>
+                  @{{ props.row.display_name}}
+                </b-table-column>
+                <b-table-column field="description" label=" وصف التصريح" width="40" numeric>
+                    @{{ props.row.description}}
+                </b-table-column>
+                <b-table-column label="التحكم" width="40" numeric>  
+                  <a class="button is-info is-outlined is-fullwidth m-b-5" :href=`roles\/${props.row.id}`>View</a>
+                  <a class="button is-success is-outlined is-fullwidth" :href=`roles\/${props.row.id}\/edit`>Edit</a>
+                </b-table-column>
+              </template>
+            </b-table>
             </div>
           </div>
         </div>
       </div>
     </div>
+@endsection
+@section('scripts')
+  <script>
+    const app = new Vue({
+      el:"#app",
+      data:{
+        roles: {!! json_encode($roles) !!},
+        hasMobileCards: true,
+        isHoverable: true,
+        perPage: 10,
+        isPaginated: true,
+        isPaginationSimple:true 
+      }
+    })
+  </script>
 @endsection

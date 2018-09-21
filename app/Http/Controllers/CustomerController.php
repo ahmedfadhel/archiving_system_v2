@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Location;
-use App\Branch;
-class BranchController extends Controller
+use App\Customer;
+class CustomerController extends Controller
 {
-
-  
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +14,8 @@ class BranchController extends Controller
     public function index()
     {
         //
-        // Retrieve branch with coresponding location
-        $branches = Branch::with('location')->get();
-        return view('manage.branches.index')->withBranches($branches);
+        $customers = Customer::get()->all();
+        return view('manage.customers.index')->withCustomers($customers);
     }
 
     /**
@@ -30,11 +26,6 @@ class BranchController extends Controller
     public function create()
     {
         //
-        $locations = Location::get()->all();
-        $branches = Branch::get()->all();
-        return view('manage.branches.create')
-                ->withLocations($locations)
-                ->withBranches($branches);
     }
 
     /**
@@ -46,21 +37,6 @@ class BranchController extends Controller
     public function store(Request $request)
     {
         //
-
-      $this->validate($request,[
-        'name' => 'required|max:50',
-        'brch_code' => 'required|alpha_dash|min:4|max:10|unique:branches',
-        'location_id' => 'required|Numeric'
-      ]);
-      $branch = new Branch();
-      $branch->name = $request->input('name');
-      $branch->brch_code = $request->input('brch_code');
-      $branch->location_id = $request->input('location_id');
-
-      if($branch->save()){
-         
-          return redirect()->route('branches.index');
-      }
     }
 
     /**
@@ -72,9 +48,6 @@ class BranchController extends Controller
     public function show($id)
     {
         //
-        $branch = Branch::find($id);
-        return view('manage.branches.show')
-                ->withBranch($branch);
     }
 
     /**
